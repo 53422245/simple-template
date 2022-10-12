@@ -1,5 +1,18 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
+
+function checkRet() {
+    local ret=$1
+    local sucMsg=$2
+    local failMsg=$3
+    if [ $ret == 0 ]; then
+    echo "===============$sucMsg==============="
+    else
+    echo "===============$failMsg==============="
+    exit 1
+    fi
+}
 
 npm run lint
-
+checkRet $? "eslint:pass" "eslint:not pass"
 npx prettier -l .
+checkRet $? "prettier:pass" "prettier:not pass"
