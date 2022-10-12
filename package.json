@@ -10,7 +10,7 @@
     "dev:css": "npm run generate:css -- --watch",
     "dev:remix": "remix dev",
     "dev:postgres": "docker compose -f ./docker/docker-compose-dev.yaml up -d",
-    "generate:css": "npx tailwindcss -i ./styles/tailwind.pcss -o ./app/styles/tailwind.css",
+    "generate:css": "npx tailwindcss -i ./app/styles/tailwind.pcss -o ./app/styles/tailwind.css",
     "setup": "prisma generate && prisma migrate deploy && prisma db seed",
     "format": "prettier --write .",
     "checkformat": "prettier -l .",
