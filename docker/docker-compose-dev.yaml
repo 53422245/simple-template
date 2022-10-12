@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  dev-postgresql:
+    container_name: dev-postgresql
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: dev
+      POSTGRES_USER: dev
+      POSTGRES_PASSWORD: devpwd
+    ports:
+      - 5432:5432

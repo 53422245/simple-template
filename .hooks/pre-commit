@@ -11,8 +11,8 @@ function checkRet() {
     exit 1
     fi
 }
-
+echo "pre-commit check"
 npm run lint
 checkRet $? "eslint:pass" "eslint:not pass"
-npx prettier -l .
+npm run checkformat
 checkRet $? "prettier:pass" "prettier:not pass"
